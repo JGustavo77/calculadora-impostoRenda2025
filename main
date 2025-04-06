@@ -1,0 +1,64 @@
+import streamlit as st #importa a biblioteca streamlit
+
+def calculo_impostopf(renda, dependentes=0, gsaude=0):#calculo do imposto de renda para pessoa fisica
+    if renda <= 2259.20:
+        imposto = 0
+    elif renda <= 2826.65:
+        imposto = renda * 0.075 - 169.44
+    elif renda <= 3751.05:
+        imposto = renda * 0.15 - 381.44
+    elif renda <= 4664.68:
+        imposto = renda * 0.225 - 662.77
+    else:
+        imposto = renda * 0.275 - 896
+
+    # Dedução por dependentes e saúde
+    imposto -= (dependentes * 189.59 + gsaude)
+    return max(imposto, 0) #retorna o valor entre 0 e o imposto calculado
+
+def calculo_impostopj(renda):#calculo do imposto de renda para pessoa juridica
+    lucro_presumido = renda * 0.08
+    imposto = lucro_presumido * 0.15
+    if lucro_presumido > 20000:
+        imposto += (lucro_presumido - 20000) * 0.10
+    return imposto
+
+# Título do app
+st.title("Calculadora de Imposto de Renda 2025")
+
+# Tipo de contribuinte
+tipo = st.selectbox("Escolha o tipo de contribuinte:", ["Pessoa Física", "Pessoa Jurídica"])
+
+# Campos comuns
+nome = st.text_input("Nome completo")
+id_fiscal = st.text_input("CPF" if tipo == "Pessoa Física" else "CNPJ")
+r_social = ""#vazio temporariamente a não ser que o tipo seja pessoa juridica
+if tipo == "Pessoa Jurídica":
+    r_social = st.text_input("Razão Social")
+
+renda = st.number_input("Informe o valor da renda (R$):", min_value=0.0, format="%.2f")#formata para 2 casas decimais
+
+# Campos extras para PF
+dependentes = 0
+gsaude = 0.0
+if tipo == "Pessoa Física":
+    dependentes = st.number_input("Quantidade de dependentes:", min_value=0)
+    gsaude = st.number_input("Gastos com saúde (R$):", min_value=0.0, format="%.2f") # formata para 2 casas decimais
+
+if st.button("Calcular Imposto"):#botão para calcular o imposto de renda e gerar o recibo
+    if tipo == "Pessoa Física":
+        imposto = calculo_impostopf(renda, dependentes, gsaude)
+    else:
+        imposto = calculo_impostopj(renda)
+
+    st.subheader("Recibo")
+    st.write(f"**Nome:** {nome}")
+    st.write(f"**{'CPF' if tipo == 'Pessoa Física' else 'CNPJ'}:** {id_fiscal}")
+    if tipo == "Pessoa Jurídica":
+        st.write(f"**Razão Social:** {r_social}")
+    st.write(f"**Tipo de Contribuinte:** {tipo}")
+    st.write(f"**Renda Informada:** R$ {renda:.2f}")
+    if tipo == "Pessoa Física":
+        st.write(f"**Dependentes:** {dependentes}")
+        st.write(f"**Gastos com Saúde:** R$ {gsaude:.2f}")
+    st.write(f"**Imposto Devido:** R$ {imposto:.2f}")
