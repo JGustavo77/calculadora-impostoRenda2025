@@ -24,7 +24,7 @@ Como Usar
 
 Clone o repositório:
 
-git clone https://github.com/seu-usuario/calculadora-imposto-renda.git
+git clone https://github.com/JGustavo77/calculadora-impostor.git
 
 Acesse a pasta do projeto:
 
