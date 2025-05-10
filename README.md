@@ -22,6 +22,25 @@ Uma aplicação interativa em Python com [Streamlit](https://streamlit.io) que c
 
 ---
 
+## 🧰 Tecnologias
+Python 3.10+
+
+Streamlit
+
+fpdf
+
+decimal
+
+io.BytesIO
+
+---
+
+## 📸 Demonstração
+
+![Calculadora de Imposto de Renda 2025](https://i.imgur.com/SeuPrint.png)
+
+ ---
+
 ## 💻 Como rodar localmente
 
 ```bash
