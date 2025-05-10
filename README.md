@@ -1,54 +1,31 @@
-Calculadora de Imposto de Renda
+# 🧮 Calculadora de Imposto de Renda 2025
 
-Este projeto tem como objetivo calcular o imposto de renda para pessoas físicas (PF) e pessoas jurídicas (PJ), considerando as alíquotas vigentes no Brasil para o ano de 2025.
+Uma aplicação interativa em Python com [Streamlit](https://streamlit.io) que calcula o imposto de renda de pessoa física ou jurídica, com base na tabela vigente. Gera recibos em **.txt** e **.pdf**, pronto para salvar ou imprimir.
 
-Funcionalidades
+---
 
-Cálculo de imposto de renda para PF baseado na renda mensal.
+## 🚀 Acesse online
 
-Cálculo para PJ utilizando o modelo de lucro presumido.
+👉 [Clique aqui para acessar o app online](https://YOUR-STREAMLIT-LINK.streamlit.app)
 
-Descontos com base no número de dependentes e gastos com saúde.
+> *Substitua pelo link após o deploy!*
 
-Interface simples em linha de comando.
+---
 
-Geração de recibo com nome, CPF/CNPJ e valor do imposto.
+## 🧠 Funcionalidades
 
-Tecnologias Utilizadas
+- 📊 Cálculo automático de IRPF e IRPJ
+- 📄 Geração de recibo em PDF (usando `fpdf`)
+- 📁 Recibo `.txt` com resumo da declaração
+- ✅ Suporte a deduções por dependentes e saúde
+- 📎 Compatível com **Streamlit Cloud** (sem uso de `open()`)
 
-Python 3
+---
 
-Streamlit (em desenvolvimento para versão com interface visual)
+## 💻 Como rodar localmente
 
-Como Usar
-
-Clone o repositório:
-
-git clone https://github.com/JGustavo77/calculadora-impostoRenda2025.git
-
-Acesse a pasta do projeto:
-
-cd calculadora-imposto-renda
-
-Execute o arquivo principal:
-
-python calculadora.py
-
-Planejamento Futuro
-
-Interface visual com Streamlit.
-
-Armazenamento de dados e histórico.
-
-Exportação de recibos em PDF.
-
-Integração com banco de dados.
-
-Contribuições
-
-Sugestões e melhorias são bem-vindas! Basta abrir uma issue ou um pull request.
-
-Licença
-
-Este projeto está licenciado sob a MIT License.
-
+```bash
+git clone https://github.com/SeuUsuario/seu-repo.git
+cd seu-repo
+pip install -r requirements.txt
+streamlit run app.py
