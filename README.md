@@ -36,7 +36,7 @@ io.BytesIO
 
 ## 📸 Demonstração
 
-![Calculadora de Imposto de Renda 2025](https://imgur.com/a/QG4d8dZ)
+![Calculadora de Imposto de Renda 2025](https://i.imgur.com/uRjIdoc.png)
 
  ---
 
