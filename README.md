@@ -6,9 +6,8 @@ Uma aplicação interativa em Python com [Streamlit](https://streamlit.io) que c
 
 ## 🚀 Acesse online
 
-👉 [Clique aqui para acessar o app online](https://YOUR-STREAMLIT-LINK.streamlit.app)
+👉 [Clique aqui para acessar o app online](https://calculadora-impostorenda2025-gkz6y8ezumw6dvanwtjvdx.streamlit.app/)
 
-> *Substitua pelo link após o deploy!*
 
 ---
 
@@ -37,7 +36,7 @@ io.BytesIO
 
 ## 📸 Demonstração
 
-![Calculadora de Imposto de Renda 2025](https://i.imgur.com/SeuPrint.png)
+![Calculadora de Imposto de Renda 2025](https://imgur.com/a/QG4d8dZ)
 
  ---
 
